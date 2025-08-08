@@ -1,0 +1,226 @@
+"Basin","Region","Site","Reference","Latitude","Longitude","RSL","Age","RSL_err","Age_err"
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.09,1996,0.18,0.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.05,1990,0.21,1
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.06,1985,0.18,1.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.07,1977,0.19,2
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.08,1969,0.19,2.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.01,1960,0.22,3.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.02,1948,0.23,5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.04,1935,0.24,6.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.06,1922,0.31,9
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.14,1908,0.22,12.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,0.08,1894,0.26,17
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.23,1879,0.3,21.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.09,1870,0.28,24
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.04,1858,0.33,28
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.09,1844,0.2,33.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.13,1831,0.25,33.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.19,1818,0.2,36
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.15,1801,0.27,40.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.1,1785,0.2,39
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.07,1769,0.2,40
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.32,1730,0.22,41.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.35,1683,0.22,48
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.42,1613,0.15,56
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.41,1551,0.14,59.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.61,1495,0.16,63
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.48,1411,0.19,35.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.54,1359,0.23,32
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.72,1324,0.16,39
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.61,1296,0.18,41
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.84,1266,0.16,45
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.74,1237,0.17,48.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.51,1176,0.13,47
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.75,1121,0.15,51
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.91,1064,0.18,60.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.01,1006,0.18,65
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.82,952,0.15,68.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.98,895,0.17,72.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.92,839,0.2,71
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.92,783,0.19,67
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.88,726,0.21,63.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-0.96,675,0.2,58
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.12,627,0.18,55.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.13,576,0.21,58
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.19,525,0.21,56.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.28,474,0.21,53.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.32,427,0.17,57.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.42,385,0.19,62.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.41,341,0.17,65.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.46,296,0.19,69.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.46,255,0.19,70
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.42,212,0.22,71
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.45,168,0.23,71.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.6,122,0.14,71.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.43,77,0.19,72.5
+"North Atlantic","Ireland","Bracky Bridge","Kirby et al. (2023)",54.756,-8.433,-1.33,28,0.21,71.5
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,0,2014.261,0.277354163,6.739
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,0.022085251,1994.71,0.316918938,17.29
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.083483247,1976.386,0.304674599,22.639
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,0.298674474,1946.34,0.366335543,14.685
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,0.103584483,1927.396,0.35106124,21.604
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,0.01729185,1911.448,0.296458515,26.552
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.025765312,1892.646,0.28218608,31.354
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.085119639,1879.254,0.256818444,32.746
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.133249006,1868.671,0.254557233,33.329
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.136776921,1857.923,0.238231537,35.077
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.144174629,1843.808,0.264694945,36.217
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.102213265,1831.225,0.323010796,35.8
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.047152612,1821.9,0.321102163,38.1
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.135525894,1813.393,0.315387807,39.607
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.200044044,1804.735,0.24373469,42.265
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.242467824,1795.418,0.234221369,43.607
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.318523578,1782.244,0.229711517,46.756
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.310973667,1767.549,0.227124923,52.501
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.306611229,1756.828,0.226745489,61.172
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.266235122,1747.036,0.321751148,66.964
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.392025011,1737.151,0.298610528,73.874
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.236155984,1727.432,0.354805975,82.593
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.481129021,1718.006,0.319757831,89.994
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.392825607,1708.842,0.240023259,98.183
+"North Atlantic","Ireland","Dungarvan","Alvarez et al (In progress)",52.10367949,-7.591936864,-0.438327188,1699.6,0.21259074,106.4
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,0,2019.197,0.238964051,2.803
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,0.006164767,2013.244,0.206146065,5.756
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.012344036,2006.909,0.271021126,7.116
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.031812099,2001.887,0.279893916,8.113
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.078257173,1997.895,0.283504555,9.105
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.078279257,1994,0.279672687,10
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.133151418,1989.951,0.231597457,10.049
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.137482049,1984.746,0.285972539,10.254
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.192928566,1978.997,0.263253383,10.003
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.187809638,1974.384,0.263226786,11.616
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.206179779,1970.032,0.231414041,12.968
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.27532827,1965.728,0.267986072,14.297
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.27280309,1960.668,0.276300539,16.332
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.269390402,1948.584,0.259836253,18.441
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.328219738,1935.043,0.259293651,22.957
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.329417742,1922.954,0.230943721,28.046
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.320626004,1910.242,0.259252638,32.758
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.310324791,1894.282,0.249053715,37.718
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.387749292,1877.932,0.253583251,44.093
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.387986681,1862.353,0.249065142,54.647
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.426623795,1853.406,0.255709173,58.594
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.414762203,1848.163,0.249521389,58.837
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.460792074,1843.5,0.253114643,60.5
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.460782789,1838.929,0.211549375,61.071
+"North Atlantic","Ireland","Cromane","Alvarez et al (In progress)",52.134535,-9.899419,-0.510401175,1834.555,0.215919408,63.47
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,0,2019,-0.181833835,2
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.154945853,2000,-0.226726767,13
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.245005682,1993,-0.25402278,14
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.264226123,1986,-0.296456589,13
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.188982122,1979,-0.273976255,12
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.11107161,1975,-0.402135907,11
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.273438739,1969,-0.314582973,11
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.364683802,1963,-0.275997208,10
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.231751472,1950,-0.268142976,9
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.316273954,1943,-0.261003857,10
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.352686831,1894.975,-0.262945964,34.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.203466369,1880,-0.121916748,23
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.328549279,1851,-0.246765818,24
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.501208217,1831.975,-0.246775266,27.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.523013046,1795,-0.270028344,45
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.39982692,1703,-0.303157849,84
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.49576629,1662,-0.244911958,92
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.600647533,1634,-0.278690729,89.5
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.28642109,1608,-0.271446413,84
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.616635787,1583,-0.279191286,79
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.403635355,1551,-0.25014433,74
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.744422091,1525.95,-0.300383553,72.05
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.39343954,1506,-0.218865163,76
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.925442605,1494.975,-0.256881742,72.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.006998631,1482,-0.226574026,70
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.94539382,1468.975,-0.258894364,68.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.660302442,1461,-0.402937621,63
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.799340192,1453,-0.259579929,56
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.897868327,1444,-0.308326813,49.5
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.986492879,1431,-0.254400227,45
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.839994226,1408,-0.267723514,46.5
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.08749942,1360,-0.253350277,68.5
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.02760625,1325.975,-0.306951178,82.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.789763818,1305.975,-0.374010605,82.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.799244381,1285.975,-0.323012997,80.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.673898123,1266,-0.062666331,79.5
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.154719313,1249.975,-0.295099701,75.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.137124889,1234.975,-0.261663496,69.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.161495297,1218,-0.327782424,67
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.603073499,1196.975,-0.128235062,69.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.174194875,1157,-0.337121439,77
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.846135229,1041.9,-0.222452264,138.1
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.166083182,986.975,-0.363760683,148.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.289220926,943.95,-0.237702883,145.05
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.275086878,908,-0.317145112,135
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.39276596,875,-0.211202059,127
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.320817495,845.975,-0.296749864,114.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.435719088,787.975,-0.254623882,104.525
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.407256345,732,-0.232737514,113
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.388987984,703,-0.314879261,112
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.306846042,674.975,-0.265829057,111.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.886816802,654.975,-0.264495876,98.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.364334451,633.975,-0.256427558,81.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.874400252,597.975,-0.160529231,66.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.108616992,567,-0.286144572,77
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.916291664,545.975,-0.229410772,85.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.408811812,516.925,-0.283060906,99.075
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.231807838,499.975,-0.327575572,104.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.388931003,480,-0.283305739,111
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.145588348,466.975,-0.176923368,112.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.110654676,440.975,-0.219642743,114.525
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.221190535,394.975,-0.299069502,134.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-0.962276512,367.925,-0.173974453,139.075
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.150760632,340.975,-0.253686043,143.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.05810961,298.975,-0.185089706,166.025
+"North Atlantic","Ireland","Timoleague","Roseby et al (In progress)",51.641,-8.764,-1.16264845,272.925,-0.138001073,172.075
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,0,2006.7,0.15,0.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.02,2002.6,0.13,2.1
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.01,1999,0.14,2.5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.08,1995.5,0.15,2.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.05,1991.9,0.14,3.1
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.08,1988.1,0.16,3.5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.07,1984.1,0.13,3.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.09,1979.5,0.16,4.1
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.06,1974.4,0.14,4.4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.11,1968.7,0.19,5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.06,1962.5,0.16,5.8
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.12,1956,0.13,7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.12,1949.3,0.13,8.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.15,1942.2,0.14,9.5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.16,1934.8,0.15,10.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.18,1927,0.12,12
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.2,1919,0.16,12.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.21,1911,0.11,13.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.16,1902.9,0.12,14.8
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.21,1894.9,0.13,15.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.22,1887,0.15,16.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.2,1878.9,0.13,17.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.23,1870.9,0.15,18.2
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.27,1862.7,0.19,18.6
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.26,1854.5,0.15,18.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.28,1846.3,0.15,19.2
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.31,1838.1,0.18,19.4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.3,1830,0.17,19.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.3,1822.1,0.12,20
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.3,1814,0.15,20.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.31,1806,0.13,20.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,0,2005.5,0.19,1.6
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,0.03,1999.8,0.18,3.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,0.03,1994.9,0.14,3.6
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,0.01,1989.6,0.15,4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.04,1983.9,0.18,3.9
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.01,1977.4,0.16,4.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.04,1970.4,0.17,5.1
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.03,1962.9,0.13,6.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.06,1955.3,0.17,7.4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.05,1947.9,0.14,8.5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.08,1940.4,0.17,9.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.05,1933,0.13,10.5
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.11,1925.7,0.19,11.4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.11,1918.4,0.14,12.1
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.12,1911.3,0.17,12.7
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.1,1904,0.17,13
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.1,1896.7,0.13,13.2
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.15,1889.3,0.16,13.4
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.13,1882,0.14,13.3
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.15,1874.7,0.16,13.2
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.19,1867.3,0.18,13
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.19,1859.9,0.16,12.8
+"North Atlantic","Ireland","Bull Island","Roseby et al (In progress)",53.3705,-6.144,-0.22,1852.5,0.17,12.4

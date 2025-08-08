@@ -1,0 +1,51 @@
+---
+title: "map"
+author: "Cara Stainsby"
+date: "2025-06-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+#Extract unique site names with longitude and latitude coords from ireland_data
+site_coords <- ireland_data %>%
+  select(Site, Longitude, Latitude) %>%
+  distinct()
+
+print(site_coords)
+```
+
+
+```{r}
+#Make data frame with location names and co-ords
+sites <- data.frame(
+  SiteName = c("Bracky Bridge", "Dungarvan", "Cromane", "Timoleague", "Bull Island"),
+  Longitude = c(-8.433000, -7.591937, -9.899419, -8.764000, -6.144000), 
+  Latitude = c(54.75600, 52.10368, 52.13453, 51.64100, 53.37050)
+)
+# Convert site coords to spatial features and load country boundaries as sf object.
+sites_sf <- st_as_sf(sites, coords = c("Longitude", "Latitude"), crs = 4326)
+ireland <- ne_countries(scale = "medium", country = "Ireland", returnclass = "sf")
+#Plot map and save
+map <- ggplot() +
+    geom_sf(data = ireland, fill = "aliceblue") +
+    geom_sf(data = sites_sf, color = "darkcyan", size = 3) +
+    geom_text(data = sites, aes(x = Longitude, y = Latitude, label = SiteName),
+              hjust = -0.1, vjust = -0.5, size = 3) +
+    coord_sf(xlim = c(-12, -5), ylim = c(50.5, 55.5)) +
+    theme_minimal() +
+    labs(title = "Sites for RSL Analysis in Ireland")
+map
+ggsave("results/my_map.png", plot = map + theme(plot.background = element_rect(fill = "white", color = NA)),
+       width = 8, height = 6, dpi = 300, bg = "white")
+```
+

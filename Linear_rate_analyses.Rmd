@@ -1,0 +1,220 @@
+---
+title: "Linear Rate Analyses"
+author: "Cara Stainsby"
+date: "2025-06-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(purrr)
+library(tidyr)
+library(gt)
+```
+
+```{r}
+#LRA for SSP126 over-all reconstructed + projected periods
+regional_ireland <- readRDS("regional_ireland.rds")
+rate_df <- regional_ireland %>%
+  group_by(SiteName,time) %>%
+  summarise(
+    n = n(),
+    rate = coef(lm(`50` ~ Year))[2],    
+    .groups = "drop"
+  )
+```
+```{r}
+#Plot of Estimated Sea-Level Rise Rates by Region and Period
+LRA <- ggplot(rate_df, aes(x = SiteName, y = rate*1000, fill = time)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
+  labs(
+    title = "Estimated Sea-Level Rise Rates by Region and Period",
+    x = "Region",
+    y = "Rate (mm/year)",
+    fill = "Period"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ggsave("results/lra.png", plot = LRA + theme(plot.background = element_rect(fill = "white", color = NA)),
+       width = 8, height = 6, dpi = 300, bg = "white")
+LRA
+
+```
+
+```{r}
+#Rate differences between reconstruction and projection periods and making a table.
+rate_wide <- rate_df %>%
+  select(SiteName, time, rate) %>%
+  pivot_wider(names_from = time, values_from = rate) %>%
+  mutate(
+    reconstruction = reconstruction * 1000,
+    projection = projection * 1000,
+    rate_diff = projection - reconstruction)
+rate_wide
+
+# View(rate_wide)
+LRA1table <- gt(rate_wide) %>%
+  tab_header(
+    title = "Estimated Sea-Level Rise Rates by Region and Period",
+  ) %>%
+  cols_label(
+    SiteName = "Site Name",
+    reconstruction = "Reconstruction Rate (mm/yr)",
+    projection = "Projection Rate (mm/yr)",
+    rate_diff = "Difference (mm/yr)"
+  )%>%
+  fmt_number(
+    columns = c(reconstruction, projection, rate_diff),
+    decimals = 4
+  )
+
+gtsave(LRA1table, "results/rate_wide.docx")
+```
+
+```{r}
+#fit linear regression models per site and scenario for rates
+scenario_rates <- sea_level_wide %>%
+  group_by(SiteName, scenario) %>%
+  summarise(
+    n = n(),
+    rate = coef(lm(`50` ~ Year))[2],  
+    .groups = "drop"
+  )%>%
+ mutate(rate = rate * 1000)
+
+print(scenario_rates)
+
+scenario_rates <- scenario_rates %>%
+  mutate(scenario = recode(scenario,
+                           "ssp119" = "SSP1-1.9",
+                           "ssp126" = "SSP1-2.6",
+                           "ssp245" = "SSP2-4.5",
+                           "ssp370" = "SSP3-7.0",
+                           "ssp585" = "SSP5-8.5"))
+```
+
+```{r}
+#Rates per site and scenario table 
+scenario_rate_wide <- scenario_rates %>%
+  select(SiteName, scenario, rate) %>%
+  pivot_wider(names_from = scenario, values_from = rate)
+
+scen_rate_table <- scenario_rate_wide %>%
+  gt() %>%
+  tab_header(
+    title = "Projected Relative Sea-Level Rise Rates (mm) by Site and Scenario"
+  ) %>%
+  cols_label(
+    SiteName = "Site"
+  ) %>%
+  fmt_number(
+    columns = -SiteName,
+    decimals = 4
+  )
+gtsave(scen_rate_table, "results/rates_by_scenario.docx")
+```
+
+```{r}
+#LRA of SSP126 components per site
+regional_ssp126_comps <- readRDS("regional_ssp126_comps.rds")
+ssp126comp_rate_df <- regional_ssp126_comps %>%
+  group_by(SiteName, source, time) %>%
+  summarise(
+    n = n(),
+    rate = coef(lm(`50` ~ Year))[2],  
+    .groups = "drop"
+  )
+ # View(ssp126comp_rate_df)
+```
+
+```{r}
+#Compare linear regression rates from reconstruction period with rates from the projected period for each site and component
+reconstruction_rates <- ssp126comp_rate_df %>%
+  filter(time == "reconstruction") %>%
+  select(SiteName, recon_rate = rate)
+
+comprate_comparison <- ssp126comp_rate_df %>%
+  filter(time == "projection") %>%
+  left_join(reconstruction_rates, by = "SiteName") %>%
+  rename(projection = rate) %>%
+  mutate(rate_diff = projection - recon_rate,
+         abs_diff = abs(rate_diff))
+
+# View(comprate_comparison)
+```
+
+```{r}
+#Make Bar Plots for Estimated Sea-Level Rise Rates per Component Per Site (mm/yr)
+sitenames <- unique(comprate_comparison$SiteName)
+for (site in sitenames) {
+  site_data <- comprate_comparison %>% 
+    filter(SiteName == site) %>%
+    mutate(
+      projection_mm = projection * 1000,
+      source = reorder(source, projection_mm))
+  
+compLRA <- ggplot(site_data, aes(x = source, y = projection_mm, fill = source)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
+  scale_fill_brewer(palette = "PiYG") +
+  labs(
+    title = paste("Estimated Sea-Level Rise Rates per Component at", site),
+    x = "Source",
+    y = "Rate (mm/year)",
+    fill = "Period"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(compLRA)
+}
+```
+
+```{r}
+# Make estimated Sea-Level Rise Rates by Component tables
+for (site in sitenames) {
+  
+  site_data <- comprate_comparison %>%
+    filter(SiteName == site) %>%
+    select(source, projection, rate_diff, abs_diff) %>%
+    mutate(
+      projection = projection * 1000,
+      rate_diff = rate_diff * 1000,
+      abs_diff = abs_diff * 1000
+    )
+  
+  recon_rate <- comprate_comparison %>%
+    filter(SiteName == site) %>%
+    pull(recon_rate) %>%
+    unique()*1000
+  
+  table <- site_data %>%
+    arrange(abs_diff) %>%
+    gt() %>%
+    tab_header(
+      title = paste("Estimated Sea-Level Rise Rates by Component for", site),
+      subtitle = paste("Estimated Reconstruction Rate:", round(recon_rate, 4), "mm/yr")
+    ) %>%
+    cols_label(
+      source = "Source",
+      projection = "Projection Rate (mm/yr)",
+      rate_diff = "Difference (mm/yr)",
+      abs_diff = "Absolute Difference (mm/yr)"
+    ) %>%
+    fmt_number(
+      columns = c(projection, rate_diff, abs_diff),
+      decimals = 4
+    )
+  safe_filename <- site %>%
+  str_replace_all("[,\\s]+", "_") %>%
+  str_replace_all("[^a-zA-Z0-9_]", "")
+  file_name <- paste0("results/LRA_table_", safe_filename, ".docx")
+  gtsave(table, file_name)
+}
+```
+

@@ -1,0 +1,340 @@
+---
+title: "All Reconstruction and Projection Plots"
+author: "Cara Stainsby"
+date: "2025-05-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Load necessary libraries
+library(ggplot2)
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(reslr)
+```
+
+```{r}
+#Read in files and shape data to required format
+nasabracky <- read_excel("data/ipcc_ar6_sea_level_projection_55_-9.xlsx", sheet = "Total")
+nasadungarvan <- read_excel("data/ipcc_ar6_sea_level_projection_51_-8.xlsx", sheet = "Total")
+nasacromane <- read_excel("data/ipcc_ar6_sea_level_projection_52_-11.xlsx", sheet = "Total")
+nasatimoleague <- read_excel("data/ipcc_ar6_sea_level_projection_51_-9.xlsx", sheet = "Total")
+nasabullisland <- read_excel("data/ipcc_ar6_sea_level_projection_psmsl_id_432.xlsx", sheet = "Total")
+nasabracky$SiteName <- "Bracky Bridge,\n Ireland"
+nasadungarvan$SiteName <- "Dungarvan,\n Ireland"
+nasacromane$SiteName <- "Cromane,\n Ireland"
+nasatimoleague$SiteName <- "Timoleague,\n Ireland"
+nasabullisland$SiteName <- "Bull Island,\n Ireland"
+
+sea_level_data <- nasabracky %>%
+  full_join(nasadungarvan) %>%
+  full_join(nasacromane) %>%
+  full_join(nasatimoleague) %>%
+  full_join(nasabullisland)
+  
+# Convert from wide to long format
+sea_level_long <- sea_level_data %>%
+  pivot_longer(`2020`:`2150`, names_to = "Year", values_to = "SeaLevelChange") 
+
+sea_level_wide <- sea_level_long %>% 
+  pivot_wider(names_from = quantile, values_from = SeaLevelChange) %>% 
+  mutate(Year = as.numeric(Year)) %>% 
+  filter(confidence == "medium")
+# View(sea_level_wide)
+```
+
+```{r}
+# Plot projection data per scenario at each site
+unique_sites <- unique(sea_level_wide$SiteName)
+for (site in unique_sites) {
+  
+  site_data <- sea_level_wide %>%
+    filter(SiteName == site)
+
+  q <- ggplot(site_data, aes(x = Year, y = `50`, color = scenario, fill = scenario)) +
+    geom_line() +
+    geom_ribbon(aes(ymin = `17`, ymax = `83`), alpha = 0.3, color = NA) +
+    labs(title = paste("Projected sea level rise for", site),
+         x = "Year", y = "Sea Level Change (m)") +
+    theme_minimal() +
+    facet_wrap(~ scenario) +
+    theme(legend.position = "top")
+  
+  print(q)
+
+}
+ggsave("results/q.png", plot = q + theme(plot.background = element_rect(fill = "white", color = NA)),
+       width = 8, height = 6, dpi = 300, bg = "white")
+```
+
+```{r}
+## Script to load Irish sea level reconstruction dataset
+# Author: Niamh Cahill
+# Date: Feb 26, 2025
+
+# Spatial temporal model for using reslr package
+library(tidyverse)
+
+# Irish Data -------------------------------------------
+# Data stored on Maeve Upton's dropbox (User should change this location)
+
+# Andy Kemp's 2023 global reconstruction data:
+global_data <- readRDS("data/global_sl_recon_data.rds")
+colnames(global_data)<- c("Basin","Region","Site","Reference","Indicator",
+                          "Latitude","Longitude","RSL","RSL_err_upr","RSL_err_lwr","Age","Age_2_err_upr","Age_2_err_lwr")
+
+global_df <- global_data %>% 
+  mutate(RSL_err = (RSL_err_upr + RSL_err_lwr)/2,
+         Age_err = ((Age_2_err_upr/2) + (Age_2_err_lwr/2))/2) %>% 
+  # Only looking at Common era (User can change this)
+  filter(Age >= 0) %>% 
+  # Removing columns that are not required
+  dplyr::select(!c("RSL_err_upr", "RSL_err_lwr", "Age_2_err_upr", "Age_2_err_lwr","Indicator"))
+
+# Filter for Kirby 2023 data:
+kirby_data <- global_df %>% filter(Site == "Bracky Bridge")
+# A4 project Ireland data:
+a4_ireland_data <- read.csv("data/Ireland_data_2023.csv")
+
+# Combining Kirby 2023 & A4 data:
+ireland_data <- rbind(kirby_data,a4_ireland_data) 
+#View(ireland_data)
+write.csv(ireland_data, "ireland_data.csv", row.names = FALSE)
+```
+
+```{r}
+#Retrieve reslr ciation
+citation("reslr")
+```
+
+```{r}
+#Load, run and save the GAM model
+multi_5_sites <- ireland_data %>%
+  dplyr::filter(Site %in% c("Bracky Bridge", "Dungarvan", "Cromane", "Timoleague", "Bull Island"))
+
+multi_5_sites_input <- reslr_load(
+  data = multi_5_sites,
+  include_tide_gauge = TRUE,
+  include_linear_rate = FALSE,
+  TG_minimum_dist_proxy = FALSE,
+  list_preferred_TGs = NULL,
+  all_TG_1deg = TRUE,
+  prediction_grid_res = 50,
+  sediment_average_TG = 10
+)
+
+ireland_ni_gam_decomp <- reslr::reslr_mcmc(
+  input_data = multi_5_sites_input,
+  model_type = "ni_gam_decomp",
+  CI = 0.95
+)
+
+saveRDS(ireland_ni_gam_decomp, "output/ireland_ni_gam_decomp.rds") 
+
+```
+
+```{r}
+# Retrieve plot of proxy data and GAM function
+png("results/reslr_plot.png", width = 8, height = 6, units = "in", res = 300)
+
+plot(
+  x = multi_5_sites_input,
+  title = "Plot of Raw Proxy Data",
+  xlab = "Year (CE)",
+  ylab = "Relative Sea Level (m)",
+  plot_proxy_records = TRUE,
+  plot_tide_gauges = FALSE,
+  plot_caption = FALSE
+)
+
+dev.off()
+
+png("results/proxydata.png", width = 8, height = 6, units = "in", res = 300)
+
+plot(
+  x = multi_5_sites,
+  title = "Plot of Raw Proxy Data",
+  xlab = "Year (CE)",
+  ylab = "Relative Sea Level (m)",
+  plot_proxy_records = TRUE,
+  plot_tide_gauges = FALSE
+)
+
+dev.off()
+
+png("results/gamplots.png", width = 8, height = 6, units = "in", res = 300)
+plot(ireland_ni_gam_decomp,
+  xlab = "Year (CE)",
+  ylab = "Relative Sea Level (m)",
+)
+dev.off()
+```
+
+```{r}
+#Retrieve rate of change plot
+plot(ireland_ni_gam_decomp, plot_type = "rate_plot")
+```
+
+```{r}
+#Combine reslr and NASA data to make combined plots
+regional_component_df <- ireland_ni_gam_decomp$output_dataframes$total_model_df %>%
+  filter(SiteName %in% c(
+    "Bracky Bridge,\n Ireland",
+    "Dungarvan,\n Ireland",
+    "Cromane,\n Ireland",
+    "Timoleague,\n Ireland",
+    "Bull Island,\n Ireland"
+  ))
+
+#Combine reslr and NASA
+regional_ireland <- rbind(
+  
+  regional_component_df %>% 
+    dplyr::select(SiteName, Year = Age, `50` = pred, `95` = upr, `5` = lwr) %>% 
+    mutate(time = "reconstruction"),
+  
+  sea_level_wide %>% 
+    filter(scenario == "ssp126") %>% 
+    select(SiteName, Year, `50`, `95`, `5`) %>% 
+    mutate(time = "projection")
+)
+saveRDS(regional_ireland, file = "output/regional_ireland.rds")
+```
+
+```{r}
+#Make combined plots of historical and projected RSL (SSP126)
+combined <- ggplot(regional_ireland, aes(x = Year, y = `50`, color = time, fill = time)) +
+      geom_line() +
+      geom_ribbon(aes(ymin = `5`, ymax = `95`), alpha = 0.3) +
+      labs(title = "Historical and Projected (SSP1-2.6) Sea Level Rise",
+           x = "Year", y = "Relative Sea Level Change (m)") +
+      theme_minimal() +
+      theme(legend.position = "top") +
+      facet_wrap(~SiteName)
+combined
+ggsave("results/combined.png", plot = combined + theme(plot.background = element_rect(fill = "white", color = NA)),
+       width = 8, height = 6, dpi = 300, bg = "white")
+```
+
+```{r}
+# Read in component data for each site and add site names
+componentsbracky <- read_excel("data/ipcc_ar6_sea_level_projection_55_-9.xlsx")
+componentsdungarvan <- read_excel("data/ipcc_ar6_sea_level_projection_51_-8.xlsx")
+componentscromane <- read_excel("data/ipcc_ar6_sea_level_projection_52_-11.xlsx")
+componentstimoleague <- read_excel("data/ipcc_ar6_sea_level_projection_51_-9.xlsx")
+componentsbullisland <- read_excel("data/ipcc_ar6_sea_level_projection_psmsl_id_432.xlsx")
+componentsbracky$SiteName <- "Bracky Bridge,\n Ireland"
+componentsdungarvan$SiteName <- "Dungarvan,\n Ireland"
+componentscromane$SiteName <- "Cromane,\n Ireland"
+componentstimoleague$SiteName <- "Timoleague,\n Ireland"
+componentsbullisland$SiteName <- "Bull Island,\n Ireland"
+sheets_to_read <- c("Sterodynamic", "GIS", "AIS", "Glaciers", "VerticalLandMotion", "LandWaterStorage")
+```
+
+```{r}
+site_paths <- list(
+  "Bracky Bridge,\n Ireland" = "data/ipcc_ar6_sea_level_projection_55_-9.xlsx",
+  "Dungarvan,\n Ireland"     = "data/ipcc_ar6_sea_level_projection_51_-8.xlsx",
+  "Cromane,\n Ireland"       = "data/ipcc_ar6_sea_level_projection_52_-11.xlsx",
+  "Timoleague,\n Ireland"    = "data/ipcc_ar6_sea_level_projection_51_-9.xlsx",
+  "Bull Island,\n Ireland"   = "data/ipcc_ar6_sea_level_projection_psmsl_id_432.xlsx"
+)
+
+sheets_to_read <- c("Sterodynamic", "GIS", "AIS", "Glaciers", "VerticalLandMotion", "LandWaterStorage")
+
+ssp126_components <- bind_rows(lapply(names(site_paths), function(sitename) {
+  path <- site_paths[[sitename]]
+  
+  bind_rows(lapply(sheets_to_read, function(sheet) {
+    read_excel(path, sheet = sheet) %>%
+      filter(scenario == "ssp126", confidence == "medium") %>%
+      mutate(source = sheet)
+  })) %>%
+    mutate(SiteName = sitename)
+}))
+#View(ssp126_components)
+```
+
+```{r}
+# Convert from wide to long format
+ssp126_comp_long <- ssp126_components %>%
+  pivot_longer(`2020`:`2150`, names_to = "Year", values_to = "SeaLevelChange") 
+
+ssp126_comp_wide <- ssp126_comp_long %>% 
+  pivot_wider(names_from = quantile, values_from = SeaLevelChange) %>% 
+  mutate(Year = as.numeric(Year))%>% 
+  filter(confidence == "medium")
+#View(ssp126_comp_wide)
+```
+
+```{r}
+ ssp126_comp_wide <- ssp126_comp_wide %>%
+  mutate(source = case_when(
+    source == "VerticalLandMotion" ~ "Vertical Land Motion",
+    source == "LandWaterStorage" ~ "Land Water Storage",
+    TRUE ~ source  
+  ))
+```
+
+
+```{r}
+#View(regional_component_df)
+#Combine reslr and ssp126 projections 
+regional_ssp126_comps <- rbind(
+  
+  regional_component_df %>% 
+    dplyr::select(SiteName, Year = Age, `50` = pred, `95` = upr, `5` = lwr) %>% 
+    mutate(time = "reconstruction",
+    source = "Total RSL"),
+  
+  ssp126_comp_wide %>% 
+    select(SiteName, Year, `50`, `95`, `5`, source) %>% 
+    mutate(time = "projection")
+)
+saveRDS(regional_ssp126_comps, file = "output/regional_ssp126_comps.rds")
+# View(regional_ssp126_comps)
+```
+ 
+```{r}
+# Make combined plots of reconstruction and component trajectories
+sitenames <- unique(regional_ssp126_comps$SiteName)
+
+for (site in sitenames) {
+  site_data <- regional_ssp126_comps %>% filter(SiteName == site)
+
+  reconstruction <- site_data %>% 
+    filter(time == "reconstruction")
+
+  projections <- site_data %>% 
+    filter(time == "projection")
+
+  components <- unique(projections$source)
+
+  reconstruction_expanded <- lapply(components, function(comp) {
+    reconstruction %>%
+      mutate(source = comp) 
+  }) %>%
+    bind_rows()
+
+  combined_data <- bind_rows(reconstruction_expanded, projections)
+
+  p <- ggplot(combined_data, aes(x = Year, y = `50`, color = time, fill = time)) +
+    geom_line() +
+    geom_ribbon(aes(ymin = `5`, ymax = `95`), alpha = 0.3) +
+    labs(
+      title = paste("Relative Sea Level Change at", gsub("\n", "", site), "per Component"),
+      x = "Year",
+      y = "Relative Sea Level Change (m)"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "top") +
+    facet_wrap(~ source, ncol = 3)
+
+  print(p)
+}
+```
